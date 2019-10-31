@@ -1,7 +1,9 @@
+type Title = string;
 interface Book {
-    title: string;
+    title: Title;
     isRead: boolean;
 }
+
 
 const books = [
   { title: "Harry Potter y la piedra filosofal", isRead: true },
@@ -9,7 +11,7 @@ const books = [
   { title: "Devastación", isRead: true }
 ] as Book[];
 
-const isBookRead = (books, title): boolean => {
+const isBookRead = (books: Book[], title: Title): boolean => {
     const book: Book = books.find((book: Book ) => book.title === title)
     return book ? book.isRead : false;
 };
